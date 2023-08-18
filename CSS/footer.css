@@ -1,0 +1,21 @@
+footer{
+    background-color: #30343F;
+    color: #FFFFFF;
+    padding: 5em 1em 1em 1em;
+}
+.lista-footer{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5em;
+}
+.lista-footer li a{
+    color: #FFFFFF;
+    margin-left: 2em;
+}
+.lista-footer img{
+    position: absolute;
+    right: 4em;
+}
+p{
+    text-align: center;
+}

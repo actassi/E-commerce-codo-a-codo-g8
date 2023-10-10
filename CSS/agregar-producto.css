@@ -1,0 +1,44 @@
+select:required:invalid {
+    color: gray;
+  }
+option[value=""][disabled] {
+    display: none;
+}
+option {
+    color: black;
+  }
+
+.imag{
+    border-style: none;
+}
+
+input {
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+}
+
+.box {
+   margin-right: 3em;
+}
+
+.row{
+    margin-bottom: 2em;
+    margin-top: 3em;
+}
+
+h1{
+    margin-top: 5em;
+    margin-bottom: 2em;
+
+}
+
+.texto{
+    margin-bottom: 2em;
+}
+
+.btn{
+    margin-top: 2em;
+    margin-right: 5em;
+    margin-bottom: 3em;
+}

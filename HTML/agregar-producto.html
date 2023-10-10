@@ -5,6 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home  |  Funkoshop</title>
     <link rel="stylesheet" href="../CSS/index.css">
+    <link rel="stylesheet" href="../CSS/agregar-producto.css">
+    <link rel="stylesheet" href="../CSS/reset.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.3/font/bootstrap-icons.css">
 </head>
 <body>    
     <header> <!-- Inicio Header -->
@@ -44,6 +49,86 @@
         </ul>
         </nav>
     </header> <!-- Fin Header -->
+
+    <main>
+        <h1 class="text-left p-4">CREAR NUEVO ITEM</h1>
+
+            <form action="" class="container">
+
+                <div class="row justify-content-left">
+                    
+                
+                    <label class="col-md-1 " for="categoria">Categoría:</label>
+                    <select required class="col-md-3 box" name="categoria">
+                        <option value="" disabled selected>Seleccionar</option>
+
+                        <option>Funko</option>
+                        
+                        <option>Remera</option>
+                        
+                        <option>Llavero</option>
+                        
+                        </select>
+
+                    <label class="col-md-1" for="licencia">Licencia:</label>
+                    <select required class="col-md-3" name="licencia">
+                        <option value="" disabled selected>Seleccionar</option>
+
+                        <option>Harry Potter</option>
+                        
+                        <option>Star Wars</option>
+                        
+                        <option>Pokemon</option>
+                        
+                        </select>
+                </div>
+
+                <div class="row justify-content-left">
+                    <label for="nombre" class="col-md-2">Nombre del producto:</label>
+                    <input type="text" name="nombre" id="nombre" class="col-md-3">
+                </div>
+
+                <div>
+                    <textarea class="p-2 texto" cols="121" rows="8" placeholder="Descripción del producto"></textarea>
+                </div>
+ 
+                <div class=" row justify-content-left">
+                    <label for="sku" class="col-md-1">SKU:</label>
+                    <input type="text" name="sku" id="sku" class="col-md-2 box" placeholder="SSK1153A985">
+                    <label for="precio" class="col-md-1">Precio:</label>
+                    <input type="number" name="precio" id="precio" class="col-md-2 box" placeholder="$0.00">
+                    <label for="stock" class="col-md-1">Stock:</label>
+                    <input type="number" name="stock" id="stock" class="col-md-2 box" placeholder="0">
+                </div>
+              
+                <div class="row justify-content-left">
+                    
+                    <label for="descuento" class="col-md-1">Descuento:</label>
+                    <input type="number" name="descuento" id="descuento" class="col-md-2 box" placeholder="0%">
+                    
+
+                    <label class="col-md-1" for="cuotas">Cuotas:</label>
+                    <select required class="col-md-3" name="cuotas">
+                        <option value="" disabled selected>Seleccionar</option>
+
+                        <option>3 Cuotas sin interés</option>
+                        
+                        <option>6 Cuotas sin interés</option>
+                        
+                        <option>12 Cuotas sin interés</option>
+                        
+                        </select>
+                </div>
+
+                <label for="imagen">Imágenes:</label>
+                <input type="file" name="imagen" id="imagen" class="imag">
+
+                <div class="flex-row justify-content-center align-items-baseline">
+                    <input type="submit" value="Agregar producto" class="btn btn-danger col-md-3">
+                    <input type="reset" value="Borrar" class="btn btn-danger col-md-3">
+
+            </form>
+    </main>
    
     <footer class="footer">       
         <nav class="navbar container">

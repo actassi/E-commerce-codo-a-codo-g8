@@ -1,0 +1,27 @@
+h1, h5{
+    padding: .8em .2em .2em 0em;
+}
+
+input {
+    border-style: none;
+    border-bottom-style: solid;
+    border-bottom-color: red;
+}
+
+.reg{
+    padding-bottom: 1em;
+    padding-top: 1em;
+    font-size: large; 
+}
+
+.btn{
+    margin-right: 2em;
+}
+
+.check{margin-right: .5em;
+}
+
+.registro{
+    margin-top: 2em;
+    margin-bottom: 3em;
+}

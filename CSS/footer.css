@@ -1,0 +1,36 @@
+footer{
+    background-color: #30343F;
+    color: #FFFFFF;
+    padding: 3em 1em 3em 1em;
+    font-family: var(--alternative-font);
+}
+.lista-footer{
+    display: flex;
+    align-items: center;
+    padding-bottom: 1.5em;
+}
+.lista-footer li{
+    margin: .5em;
+}
+.lista-footer li a{
+    color: #FFFFFF;
+    margin-left: 2em;
+    text-decoration: none;
+    padding: .5em;
+    font-size: 1.2em;
+    font-weight: 400;
+    transition: background .3s ease-in-out; 
+}
+.lista-footer li a:hover{
+    background-color: rgba(255, 51, 51, 0.9);
+}
+.lista-footer img{
+    position: absolute;
+    right: 5em;
+    width: 9em;
+}
+.p{
+    text-align: center;
+    font-size: 1.2em;
+    font-weight: 400;
+}

@@ -1,0 +1,78 @@
+.custom-form {
+    border-radius: 4px;
+    background-color: #f0f0f0;
+    padding: 2.9em;
+    text-align: left;
+}
+
+.custom-label {
+    font-weight: 500;
+    padding: 0.4em;
+    font-size: x-large;
+}
+
+.min-label {
+    font-weight: 500;
+    padding: 0.5em 1em 1em 1em;
+}
+
+.max-label {
+    font-weight: 500;
+    padding: 0.5em 1em 1em 1em;
+}
+
+.custom-input-min {
+    border-radius: 4px;
+    height: 1.5em;
+    margin-top: 0.5em;
+}
+
+.custom-input {
+    border-radius: 6px;
+}
+
+.custom-control-input {
+    margin-left: 2em;
+    border-radius: 6px;
+}
+
+.custom-control-label {
+    font-weight: 500;
+}
+
+
+.corner-badge {
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: red;
+    color: white;
+    padding: 3px 8px;
+}
+
+.tarjetas {
+    padding: 2.5em;
+}
+
+.card-title {
+    font-weight: 700;
+}
+
+.text-secondary {
+    font-weight: 500;
+}
+
+.text-primary {
+    font-weight: 700;
+}
+
+.page-item {
+    border-radius: 5px;
+    padding: 0.8em;
+    border-color: #DFE3E8;
+    font-weight: bold;
+}
+
+.page-link {
+    border-radius: 5px;
+}

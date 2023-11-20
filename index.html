@@ -4,6 +4,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Home  |  Funkoshop</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.core.min.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@glidejs/glide/dist/css/glide.theme.min.css">
     <link rel="stylesheet" href="./CSS/index.css">
     <link rel="stylesheet" href="./CSS/reset.css">
     <link rel="stylesheet" href="./CSS/footer.css">
@@ -87,10 +89,11 @@
                 <img src="./img/harry-potter/snape-patronus-1.webp" alt="Figura coleccionable Funko del patronus de Snape en la película de Harry Potter">
             </picture>
         </section>
-        <section class="slider container">
+        <section class="slider container glide">
             <h2 class="slider__title">Últimos lanzamientos</h2>
+            <div class="glide__track" data-glide-el="track">
                 <ul class="slider__items">
-                    <li class="slider__item">
+                    <li class="slider__item glide__slide">
                         <article class="card-item">
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
@@ -107,7 +110,7 @@
                             </a>
                         </article>
                     </li>
-                    <li class="slider__item">
+                    <li class="slider__item glide__slide">
                         <article class="card-item">
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
@@ -124,7 +127,7 @@
                             </a>
                         </article>
                     </li>
-                    <li class="slider__item">
+                    <li class="slider__item glide__slide">
                         <article class="card-item">
                             <a class="card-item__link" href="">
                                 <picture class="card-item__cover">
@@ -142,6 +145,11 @@
                         </article>
                     </li>
                 </ul>
+            </div>
+            <div class="glide__arrows" data-glide-el="controls">
+                <button class="glide__arrow glide__arrow--left" data-glide-dir="<"><iconify-icon icon="ic:round-chevron-left"></iconify-icon></button>
+                <button class="glide__arrow glide__arrow--right" data-glide-dir=">"><iconify-icon icon="ic:round-chevron-right"></iconify-icon></button>
+            </div>    
         </section>       
     </main>
     <footer>
@@ -157,5 +165,22 @@
     <p class="p">All rights reserved 2023 - Funkoshop &copy;</p>
     </footer>    
     <script src="https://cdn.jsdelivr.net/npm/iconify-icon@1.0.8/dist/iconify-icon.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@glidejs/glide"></script>
+    <script>
+        new Glide('.glide', {
+            type: 'carousel',
+            startAt: 0,
+            perView: 3, 
+            gap: 30, 
+            breakpoint: {
+                991: {
+                    perView: 2
+                },
+                768: {
+                    perView: 1
+                }
+            }
+        }).mount();
+    </script>
 </body>
 </html>

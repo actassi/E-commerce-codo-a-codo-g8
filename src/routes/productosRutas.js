@@ -4,7 +4,8 @@ const router = express.Router();
 const ProductosController = require('../controllers/productosController');
 const authMiddleware = require('../middleware/authMiddleware');
 
-//router.use(authMiddleware);
+
+// router.use(authMiddleware);
 
 router.get('/get-all', async (req, res) => {
   try {

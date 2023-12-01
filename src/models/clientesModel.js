@@ -1,5 +1,3 @@
-// Archivo: clientesModel.js
-
 const { DataTypes } = require('sequelize');
 const sequelize = require('../config/sequelize'); // Ajusta la ruta según tu configuración de Sequelize
 

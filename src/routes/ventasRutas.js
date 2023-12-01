@@ -3,6 +3,7 @@ const router = express.Router();
 const VentasController = require('../controllers/ventasController');
 const authMiddleware = require('../middleware/authMiddleware');
 
+
 // Usa el middleware de autenticación en todas las rutas a continuación
 //router.use(authMiddleware);
 

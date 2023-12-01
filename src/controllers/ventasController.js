@@ -1,7 +1,6 @@
 const Venta = require('../models/ventasModel');
 const Producto = require ('../controllers/productosController');
-const Carritos = require('../models/carritosModel'); // Asegúrate de ajustar la ruta según tu estructura de carpetas y configuración
-//const Carritos = require ('../controllers/carritosController');
+const Carritos = require('../models/carritosModel'); 
 const sequelize = require('../config/sequelize');
 
 const VentasController = {
@@ -14,7 +13,6 @@ const VentasController = {
   },
 
   addVenta: async (ventaData) => {
-    //console.log('ATENCION!!!!!!!!!!!!!!!!!!!!' + JSON.stringify(ventaData, null, 2));
     try {
       return await Venta.create(ventaData);
     } catch (error) {
@@ -55,15 +53,11 @@ const VentasController = {
   },
 
   completeVenta: async (ventaData) => {
-    console.log('COMPLETEVENTA*****************************************');
     const t = await sequelize.transaction(); // Inicia una transacción
     try {
-      // Inicializar un array para almacenar las ventas
       const ventas = [];
-  
-      // Iterar sobre cada producto en la venta
+
       for (const productoVenta of ventaData.productos) {
-        // Insertar una nueva venta en la tabla de ventas
         const venta = await Venta.create({
           fecha_venta: ventaData.fecha_compra,
           id_cliente: ventaData.id_cliente,
@@ -77,23 +71,20 @@ const VentasController = {
           impuestos: ventaData.impuestos,
           notas: ventaData.notas,
         }, { transaction: t });
-  
-        // Agregar la venta al array de ventas
+
         ventas.push(venta);
-  
-        // Actualizar el stock de productos en la tabla de productos
+
         const producto = await Producto.getProduct(productoVenta.id_producto);
         if (!producto) {
           throw new Error('Producto no encontrado');
         }
-  
+
         await producto.update(
           { stock: producto.stock - productoVenta.cantidad_vendida },
           { transaction: t }
         );
       }
-  
-      // Actualizar el estado del carrito en la tabla de carritos
+
       const carrito = await Carritos.findOne({
         where: {
           id_cliente: ventaData.id_cliente,
@@ -101,26 +92,20 @@ const VentasController = {
         },
       });
 
-      
-  
       if (!carrito) {
         throw new Error('Carrito no encontrado');
       }
-  
+
       await carrito.update({ estado_carrito: 'completado' }, { transaction: t });
-  
-      await t.commit(); // Confirma la transacción
-  
-      // Devuelve los ID de las ventas creadas
+
+      await t.commit();
+
       return ventas.map(venta => venta.id_venta);
     } catch (error) {
-      await t.rollback(); // En caso de error, realiza un rollback para deshacer cambios
+      await t.rollback();
       throw error;
     }
   },
-  
-  
 };
 
 module.exports = VentasController;
-

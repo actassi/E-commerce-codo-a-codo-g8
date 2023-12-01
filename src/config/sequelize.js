@@ -1,13 +1,24 @@
-
+const dotenv = require ('dotenv');
 const { Sequelize } = require('sequelize');
 
+// Carga las variables de entorno para la base de datos desde el archivo .env.db
+dotenv.config({ path: '.env.db' });
+
+// Accede a las variables de entorno para la base de datos
+const dbDialect = process.env.DB_DIALECT;
+const dbHost = process.env.DB_HOST;
+const dbUser = process.env.DB_USER;
+const dbPassword = process.env.DB_PASSWORD;
+const dbName = process.env.DB_NAME;
+const dbPort = process.env.DB_PORT;
+
 const sequelize = new Sequelize({
-  dialect: 'mysql', 
-  host: 'localhost',
-  //port: 3307,
-  username: 'root',
-  password: 'Mysql908',
-  database: 'funko',
+  dialect: dbDialect,
+  host: dbHost,
+  port: dbPort,
+  username: dbUser,
+  password: dbPassword,
+  database: dbName,
   define: {
     timestamps: false, // Si no deseas las columnas createdAt y updatedAt
   },

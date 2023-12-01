@@ -92,5 +92,3 @@ const CarritosController = {
 };
 
 module.exports = CarritosController;
-
-
